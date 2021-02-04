@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Para identificar las "Ñ" y los acentos-->
+	 <meta charset="utf-8">
+	 <!--titulo de la pestaña-->
+	 <title>Registo del tratamiento</title>
+	 <!-- Refrescar la página cada 10 segundos
+	   <meta http-equiv="refresh" content="5">-->
+	 <!--Colocar un icono-->
+	 <link rel="shortcut icon" href="img/rinon2.png" type="image/png" />
+
+	<!--Para que no se ajuste a la pantalla-->
+	<meta name="viewport" content="width=device-width,user=scalabel=no" />
+
+	<!--Con esto se cargan los estilos de Jquery mobile-->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+	<!--aqui empieza la pagina de info-->
+	<div data-role="page" id="pagina1">
+		<div data-role="header" data-theme="b">
+		    <h3>Tratamiento</h3>
+		</div>
+		<div data-role="content" data-theme="d">
+
+		    <!--primero va el logo dentral-->
+		    <center>
+		        <div>
+		            <img src="img/logorinon.png" width="175" style="border-radius:15px">
+		        </div>
+		    </center>
+
+		    <br>
+
+		    <!--Una lista UL-->
+		   <ul data-role="listview" data-theme="d" >
+
+		        <!--tres li como secciones-->
+		        <li>
+		            <a href="#presionRegistro" data-transition="slide"> <!--data-transition="slide"-->
+		                <img src="img/heart1.png" width="60" height="60">
+		                    <h3>Presión</h3>
+		                <p>
+		                    Presión y registro de actividad
+		                </p>
+		            </a>
+		        </li>
+
+		        <li>
+		            <a href="#medicamentoRegistro" data-transition="slide">
+		                <img src="img/pills.png" width="60" height="60">
+		                    <h3>Medicamento</h3>
+		                <p>
+		                    Toma de medicamento
+		                </p>
+		            </a>
+		        </li>
+
+		        <li>
+		            <a href="#ejerciciosRegistro" data-transition="slide">
+		                <img src="img/exercise1.png" width="80" height="80">
+		                    <h3>Ejercicios</h3>
+		                <p>
+		                    Registro de Ejercicios
+		                </p>
+		            </a>
+		        </li>
+
+		        <li>
+		            <a href="#dietaRegistro" data-transition="slide">
+		                <img src="img/food3.png" width="80" height="80">
+		                    <h3>Dieta</h3>
+		                <p>
+		                    Registro de alimentos y agua
+		                </p>
+		            </a>
+		        </li>
+
+		    </ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+		    <ul>
+			    <li>
+			    	<a href="#pageinfo" data-icon="info" data-rel="dialog">Información</a>
+			    </li>
+				</ul>
+	    </div>
+		</div>
+	</div>
+	<!--aqui empieza la pagina de info-->
+	<div data-role="page" id="pageinfo" >
+			<div data-role="header">
+				<h3>Datos Inicio</h3>
+			</div>
+			<div data-role="content">
+				<p>
+				Fecha: 24/03/2017<br>
+				Triglicéridos:284 <br>
+				Urea:41<br>
+				Creatinina: 1.2<br>
+				Glucosa: 87 <br>
+				Peso 95.7 kg<br>
+				Cintura 117<br>
+				Bíceps derecho 34 con esfuerzo 36<br>
+				Bíceps izquierdo 33 con esfuerzo 36<br>
+				Pierna derecha e izquierda 64<br>
+				Pecho 116<br>
+				Espalda 55<br>
+				</p>
+			</div>
+	</div>
+    <!--aqui empieza la página de presion-->
+    <div data-role="page" id="presionRegistro" data-theme="b" >
+		<div data-theme="a" data-role="header">
+			<h5>Registro de Presión</h5>
+		</div>
+		<div data-role="content" >
+			<form
+				id="miFormulario1"
+				name="enviaPost1"
+				action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSerWtJ5Edd7IdA1F2JUZlBM8E9MW6SCP5LqW49ZsGPCz_6lCw/formResponse"
+				target=""
+				method="post"
+				enctype="application/x-www-form-urlencoded">
+
+				<label>Toma de Enalapril</label>
+				<select id="enalaprilT" data-role="slider" name="entry.1464863652">
+					<option value="">NO</option>
+					<option value="20">SI</option>
+        		</select>
+        		<br><br>
+
+        		<label>Inicio de Actividad</label>
+				<select id="actividadI" data-role="slider" name="entry.836953801">
+					<option value="">NO</option>
+					<option value="30">SI</option>
+        		</select>
+        		<br><br>
+
+        		<label>Fin de Actividad</label>
+				<select id="actividadF" data-role="slider" name="entry.2008391962">
+					<option value="">NO</option>
+					<option value="35">SI</option>
+        		</select>
+        		<br><br>
+
+        		<label>Comentario:</label>
+        		<textarea cols="40" rows="8" name="entry.60194782" id="textarea"></textarea>
+        		<br>
+
+        		<label>Sistólica:</label>
+				<input type="range" id="SistoleV"  min="70"  max="170" value="" name="entry.1726332563"/>
+    			<br><br>
+
+    			<label>Diastólica:</label>
+				<input type="range" id="DiastoleV"  min="50"  max="130" value="" name="entry.278313763"/>
+				<br>
+				<input  class="ui-hidden-accessible" type="number" value="120" id="NormalSistole" name="entry.1783677175"/>
+
+				<input  class="ui-hidden-accessible" class="ui-hidden-accessible" type="number" value="80" id="NormalDiastole" name="entry.2119180253"/>
+
+				<input class="ui-hidden-accessible" type="text" id="dictamenf" name="entry.2082656492"/>
+
+
+				<input data-theme="a" type="button" value="Guardar datos" onclick="enviar_formulario1()" />
+			</form>
+
+			<script type="text/javascript">
+				function enviar_formulario1(){
+
+
+					var sistoleLargo=document.getElementById('SistoleV').value;
+					var diastoleLargo=document.getElementById('DiastoleV').value;
+
+
+						if (sistoleLargo==0 || diastoleLargo==0 ) {
+							paraDictamenf="SIN REGISTRO";
+
+					} else if (document.getElementById("SistoleV").value <= 125 && document.getElementById("DiastoleV").value <= 85) {
+
+						paraDictamenf= "Normal";
+
+					} else if(document.getElementById("SistoleV").value >= 126 || document.getElementById("DiastoleV").value >= 86) {
+
+						paraDictamenf= "Alta";
+
+					} else{
+
+						paraDictamenf= "Error"
+					}
+					//document.NombredelFormulario.Nombre/IDdelInput.value=aquivalaVariable;
+					document.enviaPost1.dictamenf.value=paraDictamenf;
+
+					document.enviaPost1.submit();
+				}
+			</script>
+
+		</div><!--data role content de presion-->
+	</div><!--termina pagina de registro de presion-->
+	<!--aqui empieza la toma de medicamento-->
+	<div data-role="page" id="medicamentoRegistro" data-theme="b" >
+		<div data-theme="a" data-role="header">
+		<h5>Registro de Medicamento</h5>
+		</div>
+
+		<div data-role="content">
+			<form
+				id="miFormulario2"
+				name="enviaPost2"
+				action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSc45Jj7SHeX0ZLIUf5mYdBOgnssgdBsYWakkFjpo-wBuYKOYw/formResponse"
+				target=""
+				method="post"
+				enctype="application/x-www-form-urlencoded">
+				<br><br>
+
+				<label>Toma de Pastilla</label>
+				<select name="entry.1755951172" id="MedicamentoNombre" data-native-menu="false">
+			    <option>Medicamento tomado</option>
+			    <option value="Enalapril">Enalapril: cada 8 horas</option>
+			    <option value="Tacrolimus"> Tacrolimus: cada 12 horas</option>
+			    <option value="Micofenolaco">Micofenolaco: cada 12 horas</option>
+			    <option value="Prednisona">Prednisona: cada 24 horas</option>
+				</select>
+
+				<br><br>
+
+				<input class="ui-hidden-accessible" type="text" id="duracionEfecto" name="entry.1823204518"/>
+
+				<input data-theme="a" type="button" value="Guardar datos" onclick="enviar_formulario2()" />
+			</form>
+
+			<script type="text/javascript">
+
+
+				function enviar_formulario2(){
+
+ 		      var nombreDelMedicamento=document.getElementById('MedicamentoNombre').value;
+
+ 				if (nombreDelMedicamento=='Prednisona') {
+ 					var duracionT=24;
+
+ 				}else if(nombreDelMedicamento=='Enalapril'){
+ 					var duracionT=8;
+
+ 				} else {
+ 					var duracionT=12;
+ 				}
+
+ 				var d = new Date();
+ 				//document.write(d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(), ' '+d.getHours(),':'+d.getMinutes(),':'+d.getSeconds());
+				var dia= d.getDate();
+				var mes= d.getMonth() +1;
+				var ano= d.getFullYear();
+				var hora= d.getHours()+ duracionT;
+				var minutos= d.getMinutes();
+				var segundos=d.getSeconds();
+				var fechass= dia +'/'+ mes+'/' + ano +" "+ hora+":"+ minutos+":"+segundos;
+
+
+				//document.NombredelFormulario.Nombre/IDdelInput.value=aquivalaVariable;
+				document.enviaPost2.duracionEfecto.value= fechass;
+				document.enviaPost2.submit();
+
+				}
+			</script>
+		</div><!--aqui termina el content de medicamento-->
+	</div><!--aqui termina  pagina medicamento-->
+
+<div data-role="page" id="ejerciciosRegistro" data-theme="b" >
+		<div data-role="header" data-theme="a">
+		<h5>Ejercicios</h5>
+		</div>
+
+		<div data-role="content">
+			  		<h2 id='crono'>00:00:00</h2>
+		<input type="button" value="Cronómetro" onclick="empezarDetener(this);" data-mini="true">
+		<form
+				id="miFormulario3"
+				name="enviaPost3"
+				action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdLCtMSs1hfERKkA5vswkFHC-qnSF9gCZy3ifyqklh2gWnKaw/formResponse"
+				target=""
+				method="post"
+				enctype="application/x-www-form-urlencoded">
+
+        		<input data-mini="true" type="text" name="entry.1455962579" id="capturaTiempo">
+        		<br>
+        		<label>Elegir Ejercicio</label>
+				<select name="entry.1249250224" id="ejercicioNombre" data-native-menu="false">
+			    <option>Ejercicio Realizado</option>
+			    <option value="Lima Lama">Lima Lama</option>
+			    <option value="Calentamiento">Calentamiento</option>
+			    <option value="Escaladora">Escaladora</option>
+			    <option value="Biceps">Biceps</option>
+			    <option value="Triceps">Triceps</option>
+			    <option value="Espalda">Espalda</option>
+			    <option value="Pecho">Pecho</option>
+			    <option value="Hombro">Hombro</option>
+			    <option value="Trapecio">Trapecio</option>
+			    <option value="Abdomen">Abdomen</option>
+			    <option value="Sentadilla">Sentadilla</option>
+			    <option value="Lucha olimpica">Lucha olimpica</option>
+			    <option value="Halterofilia">Halterofilia</option>
+				</select>
+				<br>
+				<input data-theme="a" type="button" value="Guardar datos" onclick="enviar_formulario3()" />
+
+		</form>
+		<script type="text/javascript">
+
+				function enviar_formulario3(){
+					document.enviaPost3.submit();
+				}
+		</script>
+		</div><!--aqui termina el content de ejercicio-->
+
+			<script>
+	var inicio=0;
+	var timeout=0;
+ 
+	function empezarDetener(elemento)
+	{
+		if(timeout==0)
+		{
+			// empezar el cronometro
+ 
+			elemento.value="Detener";
+ 
+			// Obtenemos el valor actual
+			inicio=vuelta=new Date().getTime();
+ 
+			// iniciamos el proceso
+			funcionando();
+		}else{
+			// detemer el cronometro
+ 
+			elemento.value="Empezar";
+			clearTimeout(timeout);
+			timeout=0;
+		}
+	}
+ 
+	function funcionando()
+	{
+		// obteneos la fecha actual
+		var actual = new Date().getTime();
+ 
+		// obtenemos la diferencia entre la fecha actual y la de inicio
+		var diff=new Date(actual-inicio);
+ 
+		// mostramos la diferencia entre la fecha actual y la inicial
+		var result=LeadingZero(diff.getUTCHours())+":"+LeadingZero(diff.getUTCMinutes())+":"+LeadingZero(diff.getUTCSeconds());
+		document.getElementById('crono').innerHTML = result;
+ 
+		// Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+		timeout=setTimeout("funcionando()",1000);
+
+
+		//document.NombredelFormulario.Nombre/IDdelInput.value=aquivalaVariable;
+		document.enviaPost3.capturaTiempo.value=result;
+
+	}
+ 
+	/* Funcion que pone un 0 delante de un valor si es necesario */
+	function LeadingZero(Time) {
+		return (Time < 10) ? "0" + Time : + Time;
+	}
+
+
+	</script>
+	</div><!--aqui termina  pagina ejercicio-->
+
+</body>
+</html>
