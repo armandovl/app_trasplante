@@ -278,36 +278,42 @@
 		</div>
 
 		<div data-role="content">
-			  		<h2 id='crono'>00:00:00</h2>
-		<input type="button" value="Cronómetro" onclick="empezarDetener(this);" data-mini="true">
 		<form
 				id="miFormulario3"
 				name="enviaPost3"
-				action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdLCtMSs1hfERKkA5vswkFHC-qnSF9gCZy3ifyqklh2gWnKaw/formResponse"
+				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfRQF-4hroAYyHzIPINqk3DvLX9Sd2wZbQlfM1XiI9HY9p1Mw/formResponse"
 				target=""
 				method="post"
 				enctype="application/x-www-form-urlencoded">
 
-        		<input data-mini="true" type="text" name="entry.1455962579" id="capturaTiempo">
         		<br>
-        		<label>Elegir Ejercicio</label>
-				<select name="entry.1249250224" id="ejercicioNombre" data-native-menu="false">
-			    <option>Ejercicio Realizado</option>
-			    <option value="Lima Lama">Lima Lama</option>
-			    <option value="Calentamiento">Calentamiento</option>
-			    <option value="Escaladora">Escaladora</option>
-			    <option value="Biceps">Biceps</option>
-			    <option value="Triceps">Triceps</option>
-			    <option value="Espalda">Espalda</option>
-			    <option value="Pecho">Pecho</option>
-			    <option value="Hombro">Hombro</option>
-			    <option value="Trapecio">Trapecio</option>
-			    <option value="Abdomen">Abdomen</option>
-			    <option value="Sentadilla">Sentadilla</option>
-			    <option value="Lucha olimpica">Lucha olimpica</option>
-			    <option value="Halterofilia">Halterofilia</option>
+
+        		<!--
+        		<label>Bicicleta</label>
+        		-->
+        		<label>Pesas</label>
+				<select name="entry.1382033528" id="ejercicioCardio" data-native-menu="false">
+			    <option value="1">inicio</option>
+			    <option value="1">fin</option>
+			    <option value="" selected="selected">ninguno</option>
 				</select>
+
+				<label>Cardio</label>
+				<select name="entry.1786009164" id="ejercicioFisico" data-native-menu="false">
+			    <option value="1">inicio</option>
+			    <option value="1">fin</option>
+			    <option value="" selected="selected">ninguno</option>
+				</select>
+
+				<label>Otro</label>
+				<select name="entry.2035630041" id="ejercicioOtro" data-native-menu="false">
+			    <option value="1">inicio</option>
+			    <option value="1">fin</option>
+			    <option value="" selected="selected">ninguno</option>
+				</select>
+
 				<br>
+
 				<input data-theme="a" type="button" value="Guardar datos" onclick="enviar_formulario3()" />
 
 		</form>
