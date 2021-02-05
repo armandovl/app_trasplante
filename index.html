@@ -87,14 +87,15 @@
 			<div data-role="navbar">
 		    <ul>
 			    <li>
-			    	<a href="#pageinfo" data-icon="info" data-rel="dialog">Información</a>
+			    	<a href="#pageinfo"  data-transition="pop" data-icon="info">Información</a> <!--quite este de arriba, ya no sirve data-rel="dialog"-->
 			    </li>
 				</ul>
 	    </div>
 		</div>
 	</div>
 	<!--aqui empieza la pagina de info-->
-	<div data-role="page" id="pageinfo" >
+	<!--agregue esto para abrir cuadro dialogo data-dialog="true"-->
+	<div data-role="page" id="pageinfo" data-dialog="true"> 
 			<div data-role="header">
 				<h3>Datos Inicio</h3>
 			</div>
