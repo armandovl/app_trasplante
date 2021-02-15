@@ -5,8 +5,8 @@
 	 <meta charset="utf-8">
 	 <!--titulo de la pestaña-->
 	 <title>Registo del tratamiento</title>
-	 <!-- Refrescar la página cada 10 segundos
-	   <meta http-equiv="refresh" content="5">-->
+	 <!-- Refrescar la página cada 10 segundos-->
+	   <meta http-equiv="refresh" content="20">
 	 <!--Colocar un icono-->
 	 <link rel="shortcut icon" href="img/rinon2.png" type="image/png" />
 
@@ -71,11 +71,11 @@
 		        </li>
 
 		        <li>
-		            <a href="#dietaRegistro" data-transition="slide">
-		                <img src="img/food3.png" width="80" height="80">
-		                    <h3>Dieta</h3>
+		            <a href="#aguaRegistro" data-transition="slide">
+		                <img src="img/vaso_agua.png" width="80" height="80">
+		                    <h3>Registro de Agua</h3>
 		                <p>
-		                    Registro de alimentos y agua
+		                    Registro de agua
 		                </p>
 		            </a>
 		        </li>
@@ -381,6 +381,42 @@
 
 	</script>
 	</div><!--aqui termina  pagina ejercicio-->
+
+    <!--aqui empieza la página de presion-->
+    <div data-role="page" id="aguaRegistro" data-theme="b" >
+		<div data-theme="a" data-role="header">
+			<h5>Registro de Agua</h5>
+		</div>
+		<div data-role="content" >
+			<form
+				id="miFormulario10"
+				name="enviaPost10"
+				action="cambia el metodo post"
+				target=""
+				method="post"
+				enctype="application/x-www-form-urlencoded">
+
+
+
+        		<label>Vasos de Agua:</label>
+				<input type="range" id="SistoleV"  min="1"  max="5" value="" name=""/>
+    			<br><br>
+
+    			<label>Comentario:</label>
+        		<textarea cols="40" rows="8" name="" id="textarea"></textarea>
+        		<br>
+
+				<input data-theme="a" type="button" value="Guardar datos" onclick="enviar_formulario10()" />
+			</form>
+
+			<script type="text/javascript">
+				function enviar_formulario10(){
+					document.enviaPost10.submit();
+				}
+			</script>
+
+		</div><!--data role content de agua-->
+	</div><!--termina pagina de registro de agua-->
 
 </body>
 </html>
